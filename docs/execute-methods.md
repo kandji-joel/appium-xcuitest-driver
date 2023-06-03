@@ -164,8 +164,8 @@ Either `true` if the app was successfully terminated, otherwise `false`
 Kill the given app on the real device under test by instruments service.
 If the app is not running or failed to kill, then nothing is done.
 
-XCUITest driver 4.4 and higher does not require [py-ios-device](https://github.com/YueChen-C/py-ios-device).
-XCUITest driver 4.3 requires [py-ios-device](https://github.com/YueChen-C/py-ios-device).
+XCUITest driver 4.4 and higher does not require [pymobiledevice3](https://github.com/doronz88/pymobiledevice3).
+XCUITest driver 4.3 requires [pymobiledevice3](https://github.com/doronz88/pymobiledevice3).
 
 #### Arguments
 
@@ -256,7 +256,7 @@ The resulting file in .trace format can be either returned directly as base64-en
 ### mobile: installCertificate
 
 Installs a custom certificate onto the device. Since Xcode SDK 11.4 Apple has added a dedicated simctl subcommand to quickly handle certificates on Simulator over CLI.
-On real devices the certificate could be installed via CLI if [py-ios-device](https://github.com/YueChen-C/py-ios-device) tool is available on the server machine.
+On real devices the certificate could be installed via CLI if [pymobiledevice3](https://github.com/doronz88/pymobiledevice3) tool is available on the server machine.
 On simulators before Xcode 11.4 SDK Apple provides no official way to do it via the command line. In such case (and also as a fallback if CLI setup fails) this method tries to wrap the certificate into .mobileconfig format and then deploys the wrapped file to the internal HTTP server, so one can open it via mobile Safari. Then the algorithm goes through the profile installation procedure by clicking the necessary buttons using WebDriverAgent.
 
 #### Arguments
@@ -273,7 +273,7 @@ The content of the generated .mobileconfig file as base64-encoded string. This c
 
 ### mobile: removeCertificate
 
-Removes installed certificate for real devices only if [py-ios-device](https://github.com/YueChen-C/py-ios-device) tool is available on the server machine since driver version 4.19.2.
+Removes installed certificate for real devices only if [pymobiledevice3](https://github.com/doronz88/pymobiledevice3) tool is available on the server machine since driver version 4.19.2.
 
 #### Arguments
 
@@ -287,7 +287,7 @@ Returns status acknowledgment `{'Status': 'Acknowledged'}` if successfully remov
 
 ### mobile: listCertificates
 
-Lists installed certificates for real devices only if [py-ios-device](https://github.com/YueChen-C/py-ios-device) tool is available on the server machine since driver version 4.10.0.
+Lists installed certificates for real devices only if [pymobiledevice3](https://github.com/doronz88/pymobiledevice3) tool is available on the server machine since driver version 4.10.0.
 
 #### Returned Result
 
@@ -646,7 +646,7 @@ Base64-encoded content of the recorded media file or an empty string if no audio
 
 ### mobile: startPcap
 
-Start mobile device network traffic capture. This extension only works if [py-ios-device](https://github.com/YueChen-C/py-ios-device) utility is installed on the server machine and only supports
+Start mobile device network traffic capture. This extension only works if [pymobiledevice3](https://github.com/doronz88/pymobiledevice3) utility is installed on the server machine and only supports
 real iOS devices.
 
 #### Arguments

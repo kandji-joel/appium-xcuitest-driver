@@ -40,7 +40,7 @@ On top of standard Appium requirements XCUITest driver also expects the followin
 - For test video recording we use [ffmpeg](https://ffmpeg.org/). It could be installed using [brew](https://brew.sh/): `brew install ffmpeg`
 - [IDB](https://github.com/facebook/idb), [go-ios](https://github.com/danielpaulus/go-ios) and [tidevice](https://github.com/alibaba/taobao-iphone-device) could be used to improve some real device/Simulator interactions
 - [WIX AppleSimulatorUtils](https://github.com/wix/AppleSimulatorUtils) could be used to improve some Simulator interactions
-- [py-ios-device](https://github.com/YueChen-C/py-ios-device) is required in several `mobile:` extensions and to improve the general testing experience for _real_ iOS devices
+- [pymobiledevice3](https://github.com/doronz88/pymobiledevice3) is required in several `mobile:` extensions and to improve the general testing experience for _real_ iOS devices
 
 
 ## Xcode version support

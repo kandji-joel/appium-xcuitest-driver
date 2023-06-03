@@ -233,6 +233,12 @@ export const executeMethodMap = {
   'mobile: listCertificates': {
     command: 'mobileListCertificates',
   },
+  'mobile: removeCertificate': {
+    command: 'mobileRemoveCertificate',
+    params: {
+      required: ['name'],
+    },
+  },
   'mobile: startLogsBroadcast': {
     command: 'mobileStartLogsBroadcast',
   },
@@ -465,7 +471,7 @@ export const executeMethodMap = {
     command: 'mobileHideKeyboard',
     params: {
       optional: ['keys'],
-    }
+    },
   },
   'mobile: isKeyboardShown': {
     command: 'isKeyboardShown',
@@ -474,16 +480,16 @@ export const executeMethodMap = {
     command: 'lock',
     params: {
       optional: ['seconds'],
-    }
+    },
   },
   'mobile: unlock': {
-    command: 'unlock'
+    command: 'unlock',
   },
   'mobile: isLocked': {
-    command: 'isLocked'
+    command: 'isLocked',
   },
   'mobile: backgroundApp': {
     command: 'background',
-    params: { optional: ['seconds'] },
+    params: {optional: ['seconds']},
   },
 } as const satisfies ExecuteMethodMap<XCUITestDriver>;

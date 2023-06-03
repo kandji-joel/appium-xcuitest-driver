@@ -86,6 +86,7 @@
     "moment": "2.29.4",
     "moment-timezone": "0.5.43",
     "node-simctl": "7.1.15",
+    "path": "0.12.7",
     "portscanner": "2.2.0",
     "semver": "7.5.1",
     "source-map-support": "0.5.21",
@@ -114,7 +115,8 @@
     "e2e-test:parallel": "mocha \"./test/functional/parallel\" --exit --timeout 10m",
     "e2e-test:web": "mocha \"./test/functional/web\" --exit --timeout 10m",
     "e2e-test:native-web-tap": "mocha \"./test/functional/web/safari-nativewebtap-e2e-specs.js\" --exit --timeout 10m",
-    "start": "appium --relaxed-security --port 4567 --keep-alive-timeout 1200"
+    "start": "appium server -ka 800 --use-plugins=images,device-farm,appium-dashboard -pa /wd/hub --plugin-device-farm-platform=ios --plugin-device-farm-ios-device-type=real --plugin-device-farm-max-sessions=8 --local-timezone --log-timestamp --debug-log-spacing --log=\"appium.out\" --relaxed-security",
+    "plugins": "appium plugin install images && appium plugin install --source=npm appium-device-farm && appium plugin install --source=npm appium-dashboard && appium plugin run device-farm install-go-ios"
   },
   "lint-staged": {
     "*.(js|ts)": [
@@ -134,11 +136,12 @@
     "@appium/docutils": "0.3.13",
     "@appium/eslint-config-appium": "8.0.3",
     "@appium/eslint-config-appium-ts": "0.3.1",
+    "@appium/images-plugin": "2.1.1",
     "@appium/test-support": "3.0.15",
     "@appium/tsconfig": "0.3.0",
+    "@appium/types": "0.11.1",
     "@commitlint/cli": "17.6.5",
     "@commitlint/config-conventional": "17.6.5",
-    "@appium/types": "0.11.1",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@types/bluebird": "3.5.38",
@@ -153,8 +156,10 @@
     "@types/teen_process": "2.0.0",
     "@typescript-eslint/eslint-plugin": "5.59.8",
     "@typescript-eslint/parser": "5.59.8",
-    "axios": "1.4.0",
     "appium": "2.0.0-beta.71",
+    "appium-dashboard": "2.0.2",
+    "appium-device-farm": "7.4.0",
+    "axios": "1.4.0",
     "chai": "4.3.7",
     "chai-as-promised": "7.1.1",
     "chai-subset": "1.6.0",
